@@ -1,13 +1,15 @@
+using LaNacion.Common;
 using LaNacion.Data;
 using LaNacion.Data.Service;
+using LaNacion.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.EntityFrameworkCore;
-using Serilog;
 using Microsoft.OpenApi.Models;
+using Serilog;
 
 namespace LaNacion
 {
@@ -27,6 +29,8 @@ namespace LaNacion
 
             services.AddDataServices();
 
+            services.AddConfigurationService(Configuration);
+
             services.AddDbContext<LaNacionContext>(options => options
               .UseSqlServer(Configuration.GetConnectionString("LaNacionDbConn")));
 
@@ -34,6 +38,7 @@ namespace LaNacion
 
             services.AddSwaggerGen(c =>
             {
+                c.OperationFilter<CustomOperationFilter>();
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = Program.APP_NAME, Version = "v1" });
             });
         }
@@ -44,6 +49,11 @@ namespace LaNacion
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", Program.APP_NAME);
+                });
             }
 
             app.UseHttpsRedirection();
@@ -59,12 +69,6 @@ namespace LaNacion
 
             context.Database.EnsureCreated(); 
             context.Database.Migrate();
-
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", Program.APP_NAME);
-            });
         }
     }
 }

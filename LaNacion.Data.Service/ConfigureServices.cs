@@ -17,6 +17,7 @@ namespace LaNacion.Data.Service
 
         internal static IServiceCollection AddDataStoreServices(this IServiceCollection services)
           => services
-              .AddScoped<IContactStore, ContactStore>();
+              .AddScoped<IContactStore, ContactStore>()
+              .AddScoped<IPhoneNumberStore, PhoneNumberStore>();
     }
 }

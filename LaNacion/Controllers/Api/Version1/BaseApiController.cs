@@ -1,10 +1,10 @@
-﻿using System;
-using LaNacion.Common.Enum;
+﻿using LaNacion.Common.Enum;
 using LaNacion.Common.Extensions;
 using LaNacion.Entities.Api;
 using LaNacion.Entities.Api.Version1;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
+using System;
 
 namespace LaNacion.Api.Controllers.Api.Version1
 {

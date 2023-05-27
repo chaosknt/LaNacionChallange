@@ -14,6 +14,7 @@ namespace LaNacion.Data.Migrations
                     ContactId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(48)", maxLength: 48, nullable: false),
                     Company = table.Column<string>(type: "nvarchar(48)", maxLength: 48, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
                     AddressLine = table.Column<string>(type: "nvarchar(120)", maxLength: 120, nullable: false),
                     City = table.Column<string>(type: "nvarchar(48)", maxLength: 48, nullable: false),
                     State = table.Column<string>(type: "nvarchar(48)", maxLength: 48, nullable: false),

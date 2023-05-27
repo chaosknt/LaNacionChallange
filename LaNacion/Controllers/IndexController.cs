@@ -20,10 +20,13 @@ namespace LaNacion.Controllers
         [HttpGet]
         public IActionResult Get()
         {
+            var currentUrl = $"{Request.Scheme}://{Request.Host}/swagger";
+
             return Ok(new
             {
                 Status = "Running",
-                ServerDate = DateTime.Now.ToString("yyyy/MM/d hh:mm")
+                ServerDate = DateTime.Now.ToString("yyyy/MM/d hh:mm"),
+                Swagger = currentUrl
             });
         }
     }

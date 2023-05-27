@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace LaNacion.Data.Models
 {
@@ -18,7 +17,11 @@ namespace LaNacion.Data.Models
 
         [Required]
         [StringLength(48)]
-        public string Company { get; set; } //for time matthers I set like a string, it could be a Entity
+        public string Company { get; set; }
+
+        [Required]
+        [StringLength(40)]
+        public string Email { get; set; }
 
         [Required]
         [StringLength(120)]

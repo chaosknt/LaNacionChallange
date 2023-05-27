@@ -1,7 +1,5 @@
 ﻿using LaNacion.Common.Enum;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LaNacion.Data.Service.Exceptions
 {

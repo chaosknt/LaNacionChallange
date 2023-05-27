@@ -6,14 +6,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LaNacion.Common\LaNacion.Common.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Mappers\" />
+    <ProjectReference Include="..\LaNacion.Data\LaNacion.Data.csproj" />
+    <ProjectReference Include="..\LaNacion.Entities\LaNacion.Entities.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+    <PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
   </ItemGroup>
 
 </Project>

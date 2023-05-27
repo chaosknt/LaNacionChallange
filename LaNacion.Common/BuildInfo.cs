@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace LaNacion.Common
+﻿namespace LaNacion.Common
 {
     public class BuildInfo
     {

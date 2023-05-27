@@ -44,6 +44,11 @@ namespace LaNacion.Data.Migrations
                         .HasMaxLength(48)
                         .HasColumnType("nvarchar(48)");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(48)
