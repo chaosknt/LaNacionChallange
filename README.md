@@ -95,6 +95,10 @@ Or you can navigate to serverUrl/swagger
 </p>
   
 <p>
-For testing purpose, the project has configurated a Seed, you can see available contacts here: https://github.com/chaosknt/LaNacionChallange/blob/master/LaNacion.Data/ContactsFakeData.cs
+For testing purpose, the project has configurated a Seed, you can see available contacts here: https://github.com/chaosknt/LaNacionChallange/blob/master/LaNacion.Data/ContactsFakeData.cs <br>
+  
+ If you want to check the available Enum values you can use the `/api/v1/Contact/enum`, it will return all enum values availables.
 </p>
+  
+ 
 
