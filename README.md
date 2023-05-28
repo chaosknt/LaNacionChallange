@@ -4,14 +4,14 @@
  Content
 
 <ol>
-  <li>[Ver requisitos del sistema](#system-requirements)</li>
+  <li>System Requirements</li>
   <li>Project Configuration</li>
   <li>AppSetting.json</li>
   <li>Project testing</li>
 <ol>
  </p>
 
-## System Requirements
+## System Requirements {#system-requirements}
 
 ### Purpose
 
