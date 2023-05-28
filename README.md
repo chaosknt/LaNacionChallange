@@ -100,7 +100,7 @@ Take into consideration the following configuration before run the proyect:
 ## Project testing
 
 <p>
-You can test the project endPoint by using the Swagger Page, the default url is <a href='https://localhost:44316/swagger/index.html'>https://localhost:44316/swagger/index.html</a>.
+You can test the project endPoints by using the Swagger Page, the default url is <a href='https://localhost:44316/swagger/index.html'>https://localhost:44316/swagger/index.html</a>.
 Or you can navigate to serverUrl/swagger
 </p>
   
