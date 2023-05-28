@@ -31,8 +31,12 @@ namespace LaNacion
 
             services.AddConfigurationService(Configuration);
 
+            //services.AddDbContext<LaNacionContext>(options => options
+            //  .UseSqlServer(Configuration.GetConnectionString("LaNacionDbConn")));
+
             services.AddDbContext<LaNacionContext>(options => options
-              .UseSqlServer(Configuration.GetConnectionString("LaNacionDbConn")));
+                .UseInMemoryDatabase(databaseName: "LaNacionInMemory")
+                );
 
             services.AddSingleton(Log.Logger);
 
@@ -68,7 +72,12 @@ namespace LaNacion
             });
 
             context.Database.EnsureCreated(); 
-            context.Database.Migrate();
+            //context.Database.Migrate();
+
+            if (env.IsDevelopment())
+            {
+                Seed.Init(app);
+            }
         }
     }
 }

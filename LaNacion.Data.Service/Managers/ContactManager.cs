@@ -27,8 +27,8 @@ namespace LaNacion.Data.Service.Managers
         private readonly IContactStore contactStore;
         private readonly IPhoneNumberStore phoneNumberStore;
 
-        private const string EmailError = "The Email has been already registered";
-        private const string PhoneNumberError = "One of the entered telephone numbers is already registered";
+        public const string EmailError = "The Email has been already registered";
+        public const string PhoneNumberError = "One of the entered telephone numbers is already registered";
         private const string PhoneNumberIsRequiredError = "At least, one phone number is required";
         public static string DuplicateError = "There is duplicate numbers";
 
@@ -41,7 +41,7 @@ namespace LaNacion.Data.Service.Managers
 
         public async Task<Guid> CreateAsync(CreateContactRequest request)
         {
-            if (!request.PhoneNumbers.Any())
+            if (request.PhoneNumbers == null || ! request.PhoneNumbers.Any())
             {
                 throw new BussinessException(PhoneNumberIsRequiredError, Common.Enum.KnownErrorCodesEnum.PhoneNumberError);
             }
@@ -99,7 +99,7 @@ namespace LaNacion.Data.Service.Managers
         {
             var contact = await this.GetContactById(request.Id);
 
-            if (!request.PhoneNumbers.Any())
+            if (request.PhoneNumbers == null || !request.PhoneNumbers.Any())
             {
                 throw new BussinessException(PhoneNumberIsRequiredError, Common.Enum.KnownErrorCodesEnum.PhoneNumberError);
             }

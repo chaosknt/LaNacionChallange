@@ -48,7 +48,7 @@ namespace LaNacion.Api.Controllers.Api.Version1
             try
             {
                 var result = await this.contactManager.CreateAsync(request);
-                return this.Ok(new CreateContactResponse { ContactId = result, Status = RequestStatus.Accepted.GetFriendlyName(), CorrelationId = correlationId });
+                return this.StatusCode(StatusCodes.Status201Created, new CreateContactResponse { ContactId = result, Status = RequestStatus.Accepted.GetFriendlyName(), CorrelationId = correlationId });
             }
             catch (BussinessException ex)
             {
