@@ -71,7 +71,6 @@ namespace LaNacion
                 endpoints.MapControllers();
             });
 
-            context.Database.EnsureCreated(); 
             //context.Database.Migrate();
 
             if (env.IsDevelopment())
