@@ -60,7 +60,7 @@ image, email, birthdate, phone number (work, personal) and address.
                 .UseInMemoryDatabase(databaseName: "LaNacionInMemory")
                 );
 ```
-* Uncomment the line 75
+* Uncomment the line 74
 ```
 //context.Database.Migrate();
 ```
