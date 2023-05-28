@@ -53,7 +53,7 @@ image, email, birthdate, phone number (work, personal) and address.
        //services.AddDbContext<LaNacionContext>(options => options
             //  .UseSqlServer(Configuration.GetConnectionString("LaNacionDbConn")));
      ```
-* Comment lines 37 to 30
+* Comment lines 37 to 39
 
  ```
        services.AddDbContext<LaNacionContext>(options => options
